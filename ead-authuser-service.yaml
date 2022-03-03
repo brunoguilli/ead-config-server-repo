@@ -40,13 +40,6 @@ ead:
     exchange:
       userEvent: ead.userevent
 
-eureka:
-  client:
-    serviceUrl:
-      defaultZone: 'http://localhost:8761/eureka'
-  instance:
-    hostname: localhost
-
 resilience4j:
   circuitBreaker:
     instances:
