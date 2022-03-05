@@ -42,7 +42,7 @@ ead:
 
 authuser:
   refreshscope:
-    name: Text updatable
+    name: Text updatable 2
 
 management:
   endpoints:
