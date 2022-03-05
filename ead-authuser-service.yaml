@@ -42,10 +42,10 @@ ead:
 
 authuser:
   refreshscope:
-    name: Esse texto pode ser alterado em tempo de execucao
+    name: Text updatable
 
 management:
-  endpoint:
+  endpoints:
     web:
       exposure:
         include:
