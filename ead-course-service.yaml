@@ -37,7 +37,7 @@ ead:
       userEventQueue:
         name: ead.userevent.ms.course
 
-authuser:
+course:
   refreshscope:
     name: Text updatable course
 
