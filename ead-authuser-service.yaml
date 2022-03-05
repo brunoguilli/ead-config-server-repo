@@ -40,6 +40,19 @@ ead:
     exchange:
       userEvent: ead.userevent
 
+authuser:
+  refreshscope:
+    name: bruno
+
+management:
+  endpoint:
+    web:
+      exposure:
+        include:
+          - refresh
+          - health
+          
+
 resilience4j:
   circuitBreaker:
     instances:
