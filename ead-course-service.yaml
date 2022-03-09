@@ -24,7 +24,7 @@ spring:
       enabled: Always
   rabbitmq:
     addresses: amqps://mhmsvsao:5wNoac8RyKubcJ-D3ZkjBlstdwO4LyDQ@fish.rmq.cloudamqp.com/mhmsvsao
-
+    
 
 ead:
   api:
