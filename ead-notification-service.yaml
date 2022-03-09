@@ -1,11 +1,17 @@
 server:
-  port: 8082
+  port: 8084
   servlet:
-    context-path: '/ead-course/'
+    context-path: '/ead-notification/'
 
 spring:
   application:
-    name: ead-course-service
+    name: ead-notification-service
+  config:
+    import: 'optional:configserver:'
+  cloud:
+    config:
+      discovery:
+        serviceId: ead-config-server
   datasource:
     url: jdbc:postgresql://localhost:5432/ead-course-v2
     username: postgres
@@ -26,23 +32,16 @@ spring:
     addresses: amqps://mhmsvsao:5wNoac8RyKubcJ-D3ZkjBlstdwO4LyDQ@fish.rmq.cloudamqp.com/mhmsvsao
 
 
-ead:
-  api:
-    url:
-      authuser: 'http://ead-authuser-service/ead-authuser'
-  broker:
-    exchange:
-      userEventExchange: ead.userevent
-      notificationCommandExchange: ead.notificationCommand
-    queue:
-      userEventQueue:
-        name: ead.userevent.ms.course
-    key:
-      notificationCommandKey: ms.notification
+logging:
+  level:
+    com.ead: TRACE
+    root: INFO
+    org.springframework.web: DEBUG
+    org.hibernate: INFO
 
-course:
-  refreshscope:
-    name: Text updatable course
+
+# inserir broker properties
+
 
 management:
   endpoints:
