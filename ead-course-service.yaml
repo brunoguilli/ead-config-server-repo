@@ -6,8 +6,14 @@ server:
 spring:
   application:
     name: ead-course-service
+  config:
+    import: 'optional:configserver:'
+  cloud:
+    config:
+      discovery:
+        serviceId: ead-config-server
   datasource:
-    url: jdbc:postgresql://localhost:5432/ead-course-v2
+    url:  jdbc:postgresql://localhost:5432/ead-course-v2
     username: postgres
     password: postgres
   jpa:
@@ -24,7 +30,14 @@ spring:
       enabled: Always
   rabbitmq:
     addresses: amqps://mhmsvsao:5wNoac8RyKubcJ-D3ZkjBlstdwO4LyDQ@fish.rmq.cloudamqp.com/mhmsvsao
-    
+
+
+logging:
+  level:
+    com.ead: TRACE
+    root: INFO
+    org.springframework.web: DEBUG
+    org.hibernate: INFO
 
 ead:
   api:
@@ -33,7 +46,7 @@ ead:
   broker:
     exchange:
       userEventExchange: ead.userevent
-      notificationCommandExchange: ead.notificationCommand
+      notificationCommandExchange: ead.notificationcommand
     queue:
       userEventQueue:
         name: ead.userevent.ms.course
